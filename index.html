@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T. A. Noor Mohammed | AI Automation Specialist for SMBs</title>
+    <meta name="description" content="AI Automation Specialist helping SMBs worldwide eliminate manual work, automate processes, and leverage AI. Based in India, serving clients globally.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root{--navy:#0d1b3e;--navylt:#1a2f5e;--gold:#c9a84c;--goldlt:#e8d08a;--golddk:#a8873a;--wh:#ffffff;--off:#f7f8fc;--g100:#f1f3f9;--g200:#e2e7f0;--g400:#9ca3af;--g600:#6b7280;--dark:#1a1a2e;--shsm:0 2px 8px rgba(13,27,62,.08);--shmd:0 8px 32px rgba(13,27,62,.13);--shlg:0 20px 60px rgba(13,27,62,.19);--r:12px;--rl:20px;--tr:all .35s cubic-bezier(.4,0,.2,1)}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;color:var(--dark);background:#fff;overflow-x:hidden;line-height:1.7}
+        h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.25}
+        a{text-decoration:none;color:inherit}ul{list-style:none}
+
+        .container{max-width:1160px;margin:0 auto;padding:0 28px}
+        .section{padding:96px 0}
+        .lbl{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+        .lbl::before{content:'';width:22px;height:2px;background:var(--gold);display:inline-block}
+        .sec-t{font-size:clamp(1.85rem,4vw,2.8rem);color:var(--navy);margin-bottom:16px}
+        .sec-s{font-size:1rem;color:var(--g600);max-width:580px;line-height:1.85}
+        .divider{width:52px;height:3px;background:linear-gradient(90deg,var(--gold),var(--goldlt));border-radius:100px;margin:16px 0 26px}
+
+        .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 30px;border-radius:6px;font-size:.88rem;font-weight:600;letter-spacing:.03em;transition:var(--tr);cursor:pointer;border:none;font-family:'Inter',sans-serif}
+        .bg{background:var(--gold);color:var(--navy)}.bg:hover{background:var(--golddk);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.38)}
+        .bo{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45)}.bo:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+
+        .tag{display:inline-flex;align-items:center;padding:5px 13px;border-radius:100px;font-size:.76rem;font-weight:600;letter-spacing:.02em}
+        .tg{background:rgba(201,168,76,.12);color:var(--golddk);border:1px solid rgba(201,168,76,.28)}
+        .tn{background:rgba(13,27,62,.07);color:var(--navy);border:1px solid rgba(13,27,62,.12)}
+
+        .fi{opacity:0;transform:translateY(28px);transition:opacity .72s ease,transform .72s ease}
+        .fi.vis{opacity:1;transform:translateY(0)}
+        .d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}
+
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:22px 0;transition:var(--tr)}
+        .nav.sc{background:var(--navy);padding:14px 0;box-shadow:0 4px 28px rgba(0,0,0,.22)}
+        .nav-in{display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:800;color:#fff}
+        .nav-logo span{color:var(--gold)}
+        .nav-links{display:flex;align-items:center;gap:34px}
+        .nav-links a{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.78);letter-spacing:.06em;transition:var(--tr);text-transform:uppercase}
+        .nav-links a:hover,.nav-links a.act{color:var(--gold)}
+        .nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:9px 22px;border-radius:5px;font-weight:700!important}
+        .nav-cta:hover{background:var(--golddk)!important}
+        .ntog{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+        .ntog span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
+
+        .mnav{display:none;position:fixed;inset:0;background:var(--navy);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+        .mnav.open{display:flex}
+        .mnav a{font-family:'Playfair Display',serif;font-size:1.9rem;color:#fff;font-weight:700;transition:var(--tr)}
+        .mnav a:hover{color:var(--gold)}
+        .mcls{position:absolute;top:24px;right:24px;font-size:1.4rem;color:rgba(255,255,255,.55);cursor:pointer;background:none;border:none}
+        .mcls:hover{color:var(--gold)}
+
+        /* HERO */
+        .hero{min-height:100vh;background:var(--navy);display:flex;align-items:flex-start;padding-top:68px;position:relative;overflow:hidden}
+        .hbg{position:absolute;inset:0;background:radial-gradient(ellipse at 18% 55%,rgba(201,168,76,.09) 0%,transparent 58%),radial-gradient(ellipse at 82% 18%,rgba(26,47,94,.55) 0%,transparent 52%),linear-gradient(140deg,#0d1b3e 0%,#142348 55%,#0d1b3e 100%)}
+        .hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.042) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.042) 1px,transparent 1px);background-size:58px 58px}
+        .orb{position:absolute;border-radius:50%;filter:blur(85px);opacity:.14;animation:flo 9s ease-in-out infinite}
+        .o1{width:420px;height:420px;background:var(--gold);top:-110px;right:8%}
+        .o2{width:260px;height:260px;background:#4a8ecf;bottom:8%;left:3%;animation-delay:-4s}
+        @keyframes flo{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-32px) scale(1.06)}}
+        /* ── Two-column hero layout ── */
+        .hcont{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:flex-start;padding-top:16px}
+        .htxt{display:flex;flex-direction:column;align-items:flex-start}
+        .hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.11);border:1px solid rgba(201,168,76,.3);color:var(--gold);padding:8px 18px;border-radius:100px;font-size:.77rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;align-self:flex-start}
+
+        .htitle{font-size:clamp(2.7rem,5.5vw,4.4rem);color:#fff;font-weight:800;line-height:1.08;margin-bottom:10px}
+        .htitle .gn{color:var(--gold);display:block}
+        .htag{font-size:clamp(.95rem,2vw,1.25rem);color:rgba(255,255,255,.65);font-family:'Playfair Display',serif;font-style:italic;margin-bottom:22px}
+        .hdesc{font-size:.95rem;color:rgba(255,255,255,.6);max-width:560px;line-height:1.85;margin-bottom:36px}
+        .hact{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:50px}
+        .hstats{display:flex;gap:32px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1);padding-top:30px;width:100%}
+        .sv{display:block;font-family:'Playfair Display',serif;font-size:1.85rem;font-weight:700;color:var(--gold)}
+        .sl{font-size:.72rem;color:rgba(255,255,255,.48);letter-spacing:.06em;text-transform:uppercase}
+
+        /* ── Hero portrait image ── */
+        .himg-wrap{position:relative;z-index:2;display:flex;align-items:center;justify-content:center}
+        .himg-outer{position:relative;display:inline-block}
+        .himg{
+            width:100%;max-width:420px;height:520px;
+            object-fit:cover;object-position:top center;
+            border-radius:24px;
+            box-shadow:0 32px 80px rgba(0,0,0,.55),0 8px 32px rgba(0,0,0,.3);
+            display:block;position:relative;z-index:2;
+        }
+        /* Gold frame border */
+        .himg-frame{
+            position:absolute;inset:-5px;border-radius:28px;
+            border:1px solid rgba(201,168,76,.28);
+            pointer-events:none;z-index:3;
+        }
+        /* Warm bottom glow */
+        .himg-glow{
+            position:absolute;bottom:-28px;left:8%;right:8%;height:70px;
+            background:rgba(201,168,76,.18);filter:blur(28px);
+            border-radius:50%;pointer-events:none;z-index:1;
+        }
+        /* Subtle corner accent */
+        .himg-acc{
+            position:absolute;top:-12px;right:-12px;
+            width:48px;height:48px;
+            background:linear-gradient(135deg,var(--gold),var(--goldlt));
+            border-radius:12px;z-index:4;opacity:.7;
+            display:flex;align-items:center;justify-content:center;
+            font-size:1.1rem;color:var(--navy);
+        }
+
+        .scue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.38);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;z-index:2;cursor:pointer;transition:var(--tr)}
+        .scue:hover{color:var(--gold)}
+        .scln{width:1px;height:38px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sp 2.2s ease-in-out infinite}
+        @keyframes sp{0%,100%{opacity:.4;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.25)}}
+
+
+        /* ABOUT */
+        .about{background:#fff}
+        .ag{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:center}
+        .ac{background:linear-gradient(140deg,var(--navy) 0%,var(--navylt) 100%);border-radius:var(--rl);padding:48px 40px;position:relative;overflow:hidden}
+        .ac::before{content:'';position:absolute;top:-30%;right:-22%;width:280px;height:280px;background:radial-gradient(circle,rgba(201,168,76,.16) 0%,transparent 70%);pointer-events:none}
+        .ainit{font-family:'Playfair Display',serif;font-size:5rem;font-weight:800;color:var(--gold);opacity:.28;line-height:1;margin-bottom:22px;position:relative}
+        .aname{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;color:#fff;margin-bottom:6px;position:relative}
+        .arole{font-size:.85rem;color:var(--gold);font-weight:500;margin-bottom:26px;position:relative}
+        .ameta{display:flex;flex-direction:column;gap:13px;position:relative}
+        .mr{display:flex;align-items:center;gap:12px;font-size:.83rem;color:rgba(255,255,255,.7)}
+        .mr i{color:var(--gold);width:15px;flex-shrink:0}
+        .aacc{position:absolute;bottom:-18px;right:-18px;background:var(--gold);border-radius:var(--r);padding:18px 22px;box-shadow:var(--shlg)}
+        .an{display:block;font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:800;color:var(--navy)}
+        .at{font-size:.72rem;font-weight:700;color:var(--navy);opacity:.78}
+        .atxt p{color:var(--g600);margin-bottom:18px;line-height:1.85}
+        .atxt p strong{color:var(--navy);font-weight:600}
+        .hls{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+        .hl{background:var(--g100);border-radius:var(--r);padding:18px;border-left:3px solid var(--gold);transition:var(--tr)}
+        .hl:hover{background:var(--g200)}
+        .hl i{font-size:1.1rem;color:var(--gold);margin-bottom:7px}
+        .hlt{font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:3px}
+        .hls2{font-size:.78rem;color:var(--g600);line-height:1.5}
+
+        /* SERVICES */
+        .services{background:var(--off)}
+        .svh{text-align:center;max-width:590px;margin:0 auto 60px}
+        .svh .sec-s{margin:0 auto}
+        .svg{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+        .svc{background:#fff;border-radius:var(--rl);padding:38px;border:1px solid var(--g200);transition:var(--tr);position:relative;overflow:hidden}
+        .svc::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--goldlt));transform:scaleX(0);transition:var(--tr);transform-origin:left}
+        .svc:hover{transform:translateY(-7px);box-shadow:var(--shlg);border-color:transparent}
+        .svc:hover::after{transform:scaleX(1)}
+        .sico{width:54px;height:54px;background:linear-gradient(135deg,var(--navy),var(--navylt));border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--gold);margin-bottom:22px}
+        .stit{font-size:1.15rem;color:var(--navy);margin-bottom:11px}
+        .sdesc{font-size:.88rem;color:var(--g600);line-height:1.8;margin-bottom:18px}
+        .stags{display:flex;flex-wrap:wrap;gap:7px}
+
+        /* PROJECTS */
+        .projects{background:#fff}
+        .ph{margin-bottom:60px}
+        .pg{display:grid;gap:28px}
+        .pc{display:grid;grid-template-columns:220px 1fr;border-radius:var(--rl);border:1px solid var(--g200);overflow:hidden;transition:var(--tr)}
+        .pc:hover{box-shadow:var(--shlg);transform:translateY(-5px);border-color:transparent}
+        .pv{background:linear-gradient(145deg,var(--navy) 0%,var(--navylt) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 22px;gap:18px;position:relative;overflow:hidden}
+        .pv::before{content:'';position:absolute;bottom:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:rgba(201,168,76,.1);pointer-events:none}
+        .pico{font-size:2.4rem;color:var(--gold);position:relative}
+        .pst{display:inline-flex;align-items:center;gap:6px;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:100px;white-space:nowrap}
+        .stlv{background:rgba(34,197,94,.14);color:#22c55e;border:1px solid rgba(34,197,94,.3)}
+        .stlv::before{content:'';width:6px;height:6px;border-radius:50%;background:#22c55e;animation:blink 2s infinite}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+        .stbl{background:rgba(201,168,76,.14);color:var(--gold);border:1px solid rgba(201,168,76,.3)}
+        .pb{padding:36px 40px}
+        .pnum{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+        .ptit{font-size:1.45rem;color:var(--navy);margin-bottom:13px}
+        .pdesc{font-size:.88rem;color:var(--g600);line-height:1.82;margin-bottom:18px}
+        .pbuls{margin-bottom:22px}
+        .pbul{display:flex;align-items:flex-start;gap:11px;font-size:.86rem;color:var(--g600);margin-bottom:9px;line-height:1.62}
+        .pbul::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:7px;flex-shrink:0}
+        .pstk{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+        .slbl{font-size:.72rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.1em;margin-right:3px}
+
+        /* SKILLS */
+        .skills-s{background:var(--navy)}
+        .skills-s .sec-t{color:#fff}
+        .skills-s .sec-s{color:rgba(255,255,255,.58)}
+        .skg{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:52px}
+        .skgp{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--rl);padding:30px;transition:var(--tr)}
+        .skgp:hover{background:rgba(255,255,255,.07);border-color:rgba(201,168,76,.22)}
+        .skgp i{font-size:1.4rem;color:var(--gold);margin-bottom:14px}
+        .skgt{font-size:.98rem;font-family:'Playfair Display',serif;font-weight:700;color:#fff;margin-bottom:18px}
+        .skis{display:flex;flex-wrap:wrap;gap:7px}
+        .ski{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);color:rgba(255,255,255,.78);padding:5px 13px;border-radius:100px;font-size:.78rem;font-weight:500;transition:var(--tr)}
+        .ski:hover{background:rgba(201,168,76,.22);color:var(--gold)}
+
+        /* EXPERIENCE */
+        .experience{background:var(--off)}
+        .tl{position:relative;margin-top:52px}
+        .tl::before{content:'';position:absolute;left:27px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),transparent)}
+        .tli{display:grid;grid-template-columns:56px 1fr;gap:28px;margin-bottom:36px}
+        .tld{width:56px;height:56px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.05rem;flex-shrink:0;border:3px solid #fff;box-shadow:var(--shsm);z-index:1}
+        .tlb{background:#fff;border-radius:var(--r);padding:26px 30px;border:1px solid var(--g200);transition:var(--tr)}
+        .tlb:hover{box-shadow:var(--shmd)}
+        .tlp{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
+        .tlt{font-size:1.05rem;color:var(--navy);margin-bottom:3px}
+        .tlc{font-size:.82rem;color:var(--g600);margin-bottom:13px}
+        .tltx{font-size:.86rem;color:var(--g600);line-height:1.8}
+
+        /* LEARNING JOURNAL */
+        .learning{background:#fff}
+        .lh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:52px;flex-wrap:wrap;gap:20px}
+        .jg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+        .jc{border-radius:var(--rl);border:1px solid var(--g200);overflow:hidden;transition:var(--tr);background:#fff}
+        .jc:hover{transform:translateY(-7px);box-shadow:var(--shlg)}
+        .jbar{height:4px;background:linear-gradient(90deg,var(--navy),var(--gold))}
+        .jbody{padding:26px}
+        .jdate{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+        .jtit{font-size:.98rem;color:var(--navy);margin-bottom:10px;line-height:1.45}
+        .jtxt{font-size:.83rem;color:var(--g600);line-height:1.72;margin-bottom:14px}
+        .jtags{display:flex;flex-wrap:wrap;gap:6px}
+        .hint{display:none;margin-top:32px;background:linear-gradient(135deg,#f7f8fc,#eef0f8);border-radius:var(--r);padding:24px 28px;border:1.5px dashed var(--g200)}
+        .hinth{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+        .hinth i{color:var(--gold)}
+        .hinth strong{color:var(--navy);font-size:.88rem}
+        .hintp{font-size:.82rem;color:var(--g600);margin:0}
+        .hintp code{background:var(--g100);padding:1px 5px;border-radius:4px;font-size:.8rem}
+
+        /* TESTIMONIALS */
+        .testimonials{background:var(--off)}
+        .tesh{text-align:center;max-width:540px;margin:0 auto 52px}
+        .tesg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+        .tesc{background:#fff;border-radius:var(--rl);padding:32px;border:1px solid var(--g200);transition:var(--tr)}
+        .tesc:hover{box-shadow:var(--shmd);transform:translateY(-5px)}
+        .tesq{font-size:2.8rem;line-height:1;color:var(--gold);opacity:.28;font-family:Georgia,serif;margin-bottom:10px}
+        .testx{font-size:.88rem;color:var(--g600);line-height:1.82;font-style:italic;margin-bottom:22px}
+        .tesau{display:flex;align-items:center;gap:13px}
+        .tesav{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navylt));display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:700;font-size:.82rem;flex-shrink:0}
+        .tesn{font-size:.88rem;font-weight:700;color:var(--navy)}
+        .tesr{font-size:.76rem;color:var(--g400)}
+        .tescta{text-align:center;margin-top:44px;background:linear-gradient(135deg,var(--navy),var(--navylt));border-radius:var(--rl);padding:36px 28px}
+        .tescta h3{font-size:1.25rem;color:#fff;margin-bottom:8px}
+        .tescta p{color:rgba(255,255,255,.55);font-size:.88rem;margin-bottom:20px}
+
+        /* CONTACT */
+        .contact{background:var(--navy)}
+        .contact .sec-t{color:#fff}
+        .contact .sec-s{color:rgba(255,255,255,.58)}
+        .cong{display:grid;grid-template-columns:1fr 1.55fr;gap:60px;align-items:start;margin-top:52px}
+        .cii{display:flex;flex-direction:column;gap:22px;margin-top:28px}
+        .ci{display:flex;align-items:flex-start;gap:15px}
+        .cico{width:42px;height:42px;flex-shrink:0;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.22);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--gold)}
+        .clbl{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:3px}
+        .cval{font-size:.88rem;color:rgba(255,255,255,.82)}
+        .cval a{color:rgba(255,255,255,.82);transition:var(--tr)}
+        .cval a:hover{color:var(--gold)}
+        .avail{margin-top:32px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:var(--r);padding:16px 20px;display:flex;align-items:center;gap:12px}
+        .adot{width:10px;height:10px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:blink 2s infinite}
+        .atxt2{font-size:.83rem;color:rgba(255,255,255,.7)}
+        .atxt2 strong{color:#22c55e}
+        .cf{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:var(--rl);padding:42px}
+        .fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+        .fg{margin-bottom:18px}
+        .fl{display:block;font-size:.76rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:7px}
+        .ff{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px 15px;color:#fff;font-size:.88rem;font-family:'Inter',sans-serif;transition:var(--tr);outline:none}
+        .ff::placeholder{color:rgba(255,255,255,.22)}
+        .ff:focus{border-color:var(--gold);background:rgba(255,255,255,.09);box-shadow:0 0 0 3px rgba(201,168,76,.12)}
+        textarea.ff{min-height:125px;resize:vertical}
+        .fsub{width:100%;padding:15px;font-size:.93rem;justify-content:center}
+        #fok{display:none;text-align:center;padding:28px}
+        #fok i{font-size:2.2rem;color:#22c55e;margin-bottom:14px;display:block}
+        #fok p{color:rgba(255,255,255,.75);font-size:.9rem;line-height:1.7}
+
+        /* FOOTER */
+        .footer{background:#060e1e;padding:44px 0 26px}
+        .ftop{display:flex;align-items:center;justify-content:space-between;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:20px}
+        .flogo{font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:800;color:#fff}
+        .flogo span{color:var(--gold)}
+        .flinks{display:flex;gap:26px;flex-wrap:wrap}
+        .flinks a{font-size:.8rem;color:rgba(255,255,255,.38);transition:var(--tr);letter-spacing:.05em}
+        .flinks a:hover{color:var(--gold)}
+        .fsoc{display:flex;gap:10px}
+        .fsoc a{width:34px;height:34px;background:rgba(255,255,255,.06);border-radius:7px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.46);font-size:.83rem;transition:var(--tr)}
+        .fsoc a:hover{background:var(--gold);color:var(--navy)}
+        .fbot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+        .fcopy{font-size:.78rem;color:rgba(255,255,255,.28)}
+        .fcopy span{color:var(--gold)}
+        .fq{font-size:.76rem;color:rgba(255,255,255,.18);font-style:italic}
+
+        .btt{position:fixed;bottom:30px;right:30px;width:42px;height:42px;background:var(--gold);color:var(--navy);border-radius:9px;border:none;display:flex;align-items:center;justify-content:center;font-size:.95rem;cursor:pointer;z-index:100;opacity:0;transform:translateY(16px);transition:var(--tr);box-shadow:var(--shmd)}
+        .btt.show{opacity:1;transform:translateY(0)}
+        .btt:hover{background:var(--golddk);transform:translateY(-3px)}
+
+        @media(max-width:1024px){.ag{grid-template-columns:1fr;gap:48px}.skg{grid-template-columns:repeat(2,1fr)}.pc{grid-template-columns:1fr}.pv{flex-direction:row;gap:20px;padding:28px}.tesg{grid-template-columns:repeat(2,1fr)}
+          /* Hero tablet: stack image on top, text below */
+          .hcont{grid-template-columns:1fr;gap:40px}
+          .himg-wrap{order:-1}
+          .himg{height:380px;max-width:100%}
+          .htxt{align-items:center;text-align:center}
+          .hbadge{align-self:center}
+          .hdesc{max-width:100%}
+          .hact{justify-content:center}
+          .hstats{justify-content:center}
+        }
+        @media(max-width:768px){.section{padding:64px 0}.nav-links{display:none}.ntog{display:flex}.svg{grid-template-columns:1fr}.skg{grid-template-columns:1fr}.jg{grid-template-columns:1fr}.tesg{grid-template-columns:1fr}.cong{grid-template-columns:1fr;gap:36px}.fr{grid-template-columns:1fr}.hstats{gap:22px}.hls{grid-template-columns:1fr}.cf{padding:26px}
+          .himg{height:300px}
+          .htxt{align-items:center;text-align:center}
+        }
+        @media(max-width:480px){.htitle{font-size:2.1rem}.hact{flex-direction:column;width:100%}.hact .btn{width:100%;justify-content:center}.lh{flex-direction:column;align-items:flex-start}
+          .himg{height:260px}
+          .hstats{gap:16px}
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nb">
+  <div class="container">
+    <div class="nav-in">
+      <div class="nav-logo">Noor<span>.</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#learning">Journal</a></li>
+        <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+      </ul>
+      <button class="ntog" id="ntog" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mnav" id="mnav">
+  <button class="mcls" id="mcls"><i class="fas fa-times"></i></button>
+  <a href="#about"    onclick="cn()">About</a>
+  <a href="#services" onclick="cn()">Services</a>
+  <a href="#projects" onclick="cn()">Projects</a>
+  <a href="#skills"   onclick="cn()">Skills</a>
+  <a href="#learning" onclick="cn()">Journal</a>
+  <a href="#contact" class="btn bg" onclick="cn()">Hire Me</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hbg"></div><div class="hgrid"></div>
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="container">
+    <div class="hcont">
+
+      <!-- LEFT COLUMN: Text & Badge -->
+      <div class="htxt">
+        <div class="hbadge"><i class="fas fa-robot"></i> AI Automation Specialist &nbsp;·&nbsp; SMB Growth Partner</div>
+        <h1 class="htitle">T. A. <span class="gn">Noor Mohammed</span></h1>
+        <p class="htag">Bridging Business Intuition with AI Intelligence</p>
+        <p class="hdesc">I help small and medium businesses worldwide eliminate manual work, automate repetitive processes, and unlock real AI value — not as a tech specialist, but as someone who truly understands how businesses work, powered by hands-on AI capability.</p>
+        <div class="hact">
+          <a href="#projects" class="btn bg"><i class="fas fa-folder-open"></i> See My Work</a>
+          <a href="#contact"  class="btn bo"><i class="fas fa-paper-plane"></i> Start a Conversation</a>
+        </div>
+        <div class="hstats">
+          <div><span class="sv">3</span><span class="sl">AI Systems Built &amp; Deployed</span></div>
+          <div><span class="sv">25+</span><span class="sl">Years Business Experience</span></div>
+          <div><span class="sv">2</span><span class="sl">Live Automations in Production</span></div>
+          <div><span class="sv">10+</span><span class="sl">Countries Worked With</span></div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Portrait Photo -->
+      <div class="himg-wrap">
+        <div class="himg-outer">
+          <img src="profile-hero.jpg" alt="T. A. Noor Mohammed — AI Automation Specialist" class="himg">
+          <div class="himg-frame"></div>
+          <div class="himg-glow"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="scue" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+    <div class="scln"></div><span>Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="ag">
+      <div class="fi">
+        <div class="ac">
+          <div class="ainit">NM</div>
+          <div class="aname">T. A. Noor Mohammed</div>
+          <div class="arole">AI Automation Specialist &nbsp;·&nbsp; Business Strategist &nbsp;·&nbsp; Published Author</div>
+          <div class="ameta">
+            <div class="mr"><i class="fas fa-map-marker-alt"></i><span>Hospet, Karnataka, India</span></div>
+            <div class="mr"><i class="fas fa-globe"></i><span>Serving clients globally (IST timezone)</span></div>
+            <div class="mr"><i class="fas fa-graduation-cap"></i><span>MA &nbsp;·&nbsp; PGDM/MBA &nbsp;·&nbsp; BSc</span></div>
+            <div class="mr"><i class="fas fa-language"></i><span>English · Hindi · Kannada · Urdu</span></div>
+            <div class="mr"><i class="fas fa-book-open"></i><span>Published Author — Islamic Studies</span></div>
+            <div class="mr"><i class="fas fa-envelope"></i><span>tanmd100@gmail.com</span></div>
+          </div>
+          <div class="aacc"><span class="an">25+</span><span class="at">Years of business<br>experience</span></div>
+        </div>
+      </div>
+      <div class="atxt fi d2">
+        <span class="lbl">My Story</span>
+        <h2 class="sec-t">From Boardrooms to Bots — Powered by Curiosity</h2>
+        <div class="divider"></div>
+        <p>I didn't come from a technology background. With <strong>over 25 years in business operations</strong> — from international procurement across UAE, Europe and Kazakhstan, to managing HR and sales across a 5-branch, 250+ employee automobile dealership — my career has been built on understanding how businesses actually work.</p>
+        <p>Then AI changed everything. Out of pure curiosity, I began learning how modern AI could solve the exact frustrations I saw in daily business life: endless manual follow-ups, data entry drudgery, and missed automation opportunities. Within months, I had <strong>independently built and deployed three working AI automation systems</strong> — without a development team, using AI-assisted coding and business instinct.</p>
+        <p>That experience proved one thing: <strong>Business understanding + AI tools = real, deployable solutions.</strong> I now bring this same ability to SMBs worldwide — helping them save time, reduce cost, and compete smarter.</p>
+        <div class="hls">
+          <div class="hl fi d1"><i class="fas fa-lightbulb"></i><div class="hlt">Business-First Thinking</div><div class="hls2">Every solution starts with the real business problem — not the technology</div></div>
+          <div class="hl fi d2"><i class="fas fa-rocket"></i><div class="hlt">Proven Deployer</div><div class="hls2">3 live AI automations — from idea to production — without a dev team</div></div>
+          <div class="hl fi d3"><i class="fas fa-globe-asia"></i><div class="hlt">Global Perspective</div><div class="hls2">International experience across UAE, Europe, Central Asia &amp; South Asia</div></div>
+          <div class="hl fi d4"><i class="fas fa-sync-alt"></i><div class="hlt">Continuous Learner</div><div class="hls2">Actively expanding into n8n, AI agents, RAG &amp; no-code automation</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="svh fi">
+      <span class="lbl">What I Offer</span>
+      <h2 class="sec-t">AI Automation Services for Modern SMBs</h2>
+      <p class="sec-s">Practical, affordable, and results-driven AI automation — designed for small and medium businesses who want to work smarter without hiring a full tech team.</p>
+    </div>
+    <div class="svg">
+      <div class="svc fi d1"><div class="sico"><i class="fas fa-cogs"></i></div><h3 class="stit">Business Process Automation</h3><p class="sdesc">Eliminate repetitive manual tasks — from data entry and reporting to follow-ups and notifications. I map your workflows and build automations that run while you sleep, saving hours every week.</p><div class="stags"><span class="tag tg">n8n</span><span class="tag tg">Python</span><span class="tag tg">Zapier</span><span class="tag tg">WhatsApp API</span></div></div>
+      <div class="svc fi d2"><div class="sico"><i class="fas fa-brain"></i></div><h3 class="stit">AI-Powered Data Extraction &amp; Processing</h3><p class="sdesc">Turn unstructured documents — resumes, invoices, emails, PDFs — into structured, actionable data using LLMs and OCR. Save hours of manual reading and dramatically reduce errors.</p><div class="stags"><span class="tag tg">Gemini API</span><span class="tag tg">Claude API</span><span class="tag tg">OCR</span><span class="tag tg">Python</span></div></div>
+      <div class="svc fi d3"><div class="sico"><i class="fas fa-comment-dots"></i></div><h3 class="stit">Customer Communication Automation</h3><p class="sdesc">Automate personalised customer reminders, follow-ups, and notifications via WhatsApp, SMS, or Email. Reduce churn, improve retention, and free your team from repetitive outreach — in multiple languages.</p><div class="stags"><span class="tag tg">WhatsApp</span><span class="tag tg">SMS Gateway</span><span class="tag tg">Multilingual</span><span class="tag tg">Python</span></div></div>
+      <div class="svc fi d4"><div class="sico"><i class="fas fa-chart-line"></i></div><h3 class="stit">AI Strategy &amp; Consulting for SMBs</h3><p class="sdesc">Not sure where to start with AI? I'll audit your business operations, identify the highest-impact automation opportunities, and give you a clear, jargon-free roadmap — no tech background required.</p><div class="stags"><span class="tag tg">AI Audit</span><span class="tag tg">Roadmapping</span><span class="tag tg">SMB Focus</span><span class="tag tg">ROI-Driven</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section projects" id="projects">
+  <div class="container">
+    <div class="ph fi">
+      <span class="lbl">Proof of Work</span>
+      <h2 class="sec-t">AI Projects Built &amp; Deployed</h2>
+      <p class="sec-s">These aren't tutorials or concepts — they are real systems I independently designed, built, tested, and deployed to solve actual operational problems in a live business.</p>
+    </div>
+    <div class="pg">
+
+      <div class="pc fi">
+        <div class="pv"><div class="pico"><i class="fas fa-user-tie"></i></div><div class="pst stbl">BUILT</div></div>
+        <div class="pb">
+          <div class="pnum">Project 01 &nbsp;·&nbsp; AI &amp; LLM</div>
+          <h3 class="ptit">JATIP — AI Candidate Screening Platform</h3>
+          <p class="pdesc">An end-to-end LLM-powered hiring intelligence system that automates the most time-consuming part of recruitment: evaluating candidates fairly and consistently at scale, across multiple intake channels.</p>
+          <div class="pbuls">
+            <div class="pbul">Handles candidate intake from multiple sources — email, WhatsApp, walk-in, and referrals — in a unified pipeline</div>
+            <div class="pbul">Uses Tesseract OCR to extract data from scanned/PDF resumes; evaluates against 30+ role-specific job profiles</div>
+            <div class="pbul">Applies weighted multi-factor scoring via LLMs (Gemini/Groq) for bias-reduced shortlisting with a Streamlit dashboard</div>
+          </div>
+          <div class="pstk"><span class="slbl">Stack:</span><span class="tag tn">Python</span><span class="tag tn">Streamlit</span><span class="tag tn">SQLite</span><span class="tag tn">Gemini API</span><span class="tag tn">Groq API</span><span class="tag tn">Tesseract OCR</span><span class="tag tn">pdfplumber</span></div>
+        </div>
+      </div>
+
+      <div class="pc fi d1">
+        <div class="pv"><div class="pico"><i class="fab fa-whatsapp"></i></div><div class="pst stlv">LIVE IN USE</div></div>
+        <div class="pb">
+          <div class="pnum">Project 02 &nbsp;·&nbsp; Customer Automation</div>
+          <h3 class="ptit">WhatsApp Service Reminder Automation</h3>
+          <p class="pdesc">A production-deployed automation currently active at JAPL — reads vehicle service-due data from Excel and sends personalised, bilingual WhatsApp reminders, eliminating hours of manual customer follow-up every week.</p>
+          <div class="pbuls">
+            <div class="pbul">Sends personalised English + Kannada reminders at 7, 5, 3, and 1 day(s) before each customer's service due date</div>
+            <div class="pbul">Includes mobile number validation, dynamic multilingual message generation, full error handling and WhatsApp Desktop automation</div>
+            <div class="pbul">Logs all activity to CSV for full audit trail — deployed and running in a real, 5-branch business environment</div>
+          </div>
+          <div class="pstk"><span class="slbl">Stack:</span><span class="tag tn">Python</span><span class="tag tn">Pandas</span><span class="tag tn">PyAutoGUI</span><span class="tag tn">WhatsApp Desktop</span></div>
+        </div>
+      </div>
+
+      <div class="pc fi d2">
+        <div class="pv"><div class="pico"><i class="fas fa-mobile-alt"></i></div><div class="pst stlv">LIVE IN USE</div></div>
+        <div class="pb">
+          <div class="pnum">Project 03 &nbsp;·&nbsp; SMS Automation</div>
+          <h3 class="ptit">SMS Reminder Gateway</h3>
+          <p class="pdesc">A companion automation to the WhatsApp system — generates personalised SMS reminder content and exports it for delivery via Android SMS gateway. Packaged as a standalone Windows .exe, currently in live use — no Python required on the end machine.</p>
+          <div class="pbuls">
+            <div class="pbul">Generates personalised SMS on configurable date thresholds; exports to Google Drive-synced CSV for the Android SMS app</div>
+            <div class="pbul">Handles execution logging, error handling, and bulk SMS delivery without a commercial SMS API subscription</div>
+            <div class="pbul">Packaged as a portable Windows .exe using PyInstaller — fully self-contained, zero installation required on the target machine</div>
+          </div>
+          <div class="pstk"><span class="slbl">Stack:</span><span class="tag tn">Python</span><span class="tag tn">Pandas</span><span class="tag tn">OpenPyXL</span><span class="tag tn">Google Drive Sync</span><span class="tag tn">PyInstaller</span><span class="tag tn">Android SMS Gateway</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section skills-s" id="skills">
+  <div class="container">
+    <div class="fi">
+      <span class="lbl">Capabilities</span>
+      <h2 class="sec-t">Skills &amp; Tools</h2>
+      <p class="sec-s">A practical toolkit built from real project experience — not just certificates or courses.</p>
+    </div>
+    <div class="skg">
+      <div class="skgp fi d1"><i class="fas fa-robot"></i><div class="skgt">AI &amp; Language Models</div><div class="skis"><span class="ski">Prompt Engineering</span><span class="ski">Gemini API</span><span class="ski">Claude API</span><span class="ski">Groq API</span><span class="ski">LLM Evaluation Logic</span><span class="ski">AI-Assisted Dev</span><span class="ski">Structured Scoring</span></div></div>
+      <div class="skgp fi d2"><i class="fas fa-code"></i><div class="skgt">Build &amp; Automation Tools</div><div class="skis"><span class="ski">Python</span><span class="ski">Streamlit</span><span class="ski">Flask</span><span class="ski">n8n</span><span class="ski">Pandas</span><span class="ski">PyAutoGUI</span><span class="ski">SQLite</span><span class="ski">PyInstaller</span><span class="ski">pdfplumber</span><span class="ski">Tesseract OCR</span><span class="ski">OpenPyXL</span></div></div>
+      <div class="skgp fi d3"><i class="fas fa-briefcase"></i><div class="skgt">Business &amp; Operations</div><div class="skis"><span class="ski">HR Operations</span><span class="ski">Recruitment</span><span class="ski">Int'l Procurement</span><span class="ski">B2B Sales &amp; Logistics</span><span class="ski">Payroll / CTC</span><span class="ski">Workforce Reporting</span><span class="ski">Oil &amp; Gas EPC</span></div></div>
+      <div class="skgp fi d1"><i class="fas fa-project-diagram"></i><div class="skgt">Workflow &amp; Solution Design</div><div class="skis"><span class="ski">Requirements Analysis</span><span class="ski">Workflow Mapping</span><span class="ski">End-to-end Deployment</span><span class="ski">Testing &amp; Debugging</span><span class="ski">Google Drive Integration</span><span class="ski">SMS Gateway Setup</span></div></div>
+      <div class="skgp fi d2"><i class="fas fa-globe"></i><div class="skgt">Languages &amp; Communication</div><div class="skis"><span class="ski">English (Fluent)</span><span class="ski">Hindi (Fluent)</span><span class="ski">Kannada</span><span class="ski">Urdu</span><span class="ski">Cross-cultural Client Work</span><span class="ski">Technical Writing</span><span class="ski">Published Author</span></div></div>
+      <div class="skgp fi d3"><i class="fas fa-graduation-cap"></i><div class="skgt">Currently Learning</div><div class="skis"><span class="ski">Advanced n8n</span><span class="ski">AI Agents</span><span class="ski">Make.com</span><span class="ski">Zapier</span><span class="ski">Flowise</span><span class="ski">RAG Systems</span><span class="ski">Voice AI</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section experience" id="experience">
+  <div class="container">
+    <div class="fi">
+      <span class="lbl">Career Journey</span>
+      <h2 class="sec-t">Experience That Shapes My AI Work</h2>
+      <p class="sec-s">25+ years of hands-on business experience across multiple industries, roles, and countries — the foundation of every automation I design.</p>
+    </div>
+    <div class="tl">
+      <div class="tli fi"><div class="tld"><i class="fas fa-robot"></i></div><div class="tlb"><div class="tlp">Jan 2019 – Present</div><h3 class="tlt">Sr. Manager – HR &amp; Sales Support Operations</h3><div class="tlc">Janatha Automobiles Private Limited (JAPL) — Tata Motors CV Dealership, Hospet</div><p class="tltx">Independently conceived, built, and deployed three AI/automation systems addressing real operational gaps in hiring and customer service — self-directed, end-to-end, without a dedicated IT or dev team. Manages HR operations across payroll/CTC, multi-branch attendance data, and workforce reporting for a 150+ employee, 5-branch organisation.</p></div></div>
+      <div class="tli fi d1"><div class="tld"><i class="fas fa-ship"></i></div><div class="tlb"><div class="tlp">1998 – 2018</div><h3 class="tlt">International Sales &amp; Procurement Manager</h3><div class="tlc">Bhatia Brothers Gulf FZE / Alinco Pipe Supply FZE, UAE &nbsp;·&nbsp; Gateway Ventures, Chennai</div><p class="tltx">Developed business across UAE and Qatar for lifting equipment, steel pipes, and fittings. Sourced and coordinated procurement across UK, France, Netherlands, Italy, USA, UAE, and India for oil &amp; gas / EPC clients, including remote coordination for Kazakhstan-based projects. Built and maintained supplier and client relationships across multiple countries and time zones.</p></div></div>
+      <div class="tli fi d2"><div class="tld"><i class="fas fa-industry"></i></div><div class="tlb"><div class="tlp">Earlier Career</div><h3 class="tlt">Logistics &amp; Entrepreneurial Roles</h3><div class="tlc">MSPL — Iron Ore Mining Logistics, Hospet &nbsp;·&nbsp; Skylark Aerosports (Founder)</div><p class="tltx">Managed iron ore mining logistics operations at MSPL. Founded and ran Skylark Aerosports as an entrepreneurial venture — building commercial awareness, operational management skills, and the confidence to design and deliver end-to-end solutions independently.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARNING JOURNAL -->
+<section class="section learning" id="learning">
+  <div class="container">
+    <div class="lh">
+      <div class="fi">
+        <span class="lbl">Learning Journal</span>
+        <h2 class="sec-t">My AI Learning Journey</h2>
+        <p class="sec-s">Documenting my ongoing exploration of AI tools, platforms, and techniques — updated regularly as I learn and build.</p>
+      </div>
+    </div>
+    <div class="jg" id="jGrid">
+      <!-- JOURNAL:START -->
+
+      <!-- ════ JOURNAL ENTRY — copy this entire block to add a new entry ════ -->
+      <div class="jc fi d1">
+        <div class="jbar"></div>
+        <div class="jbody">
+          <div class="jdate">Aug 2026</div>
+          <h4 class="jtit">Built My First End-to-End AI System: JATIP</h4>
+          <p class="jtxt">Designed and deployed an LLM-powered candidate screening platform covering intake, OCR extraction, and scored evaluation across 30+ job profiles. My biggest AI project to date — built entirely using AI-assisted coding and business problem-solving instincts.</p>
+          <div class="jtags"><span class="tag tg">Python</span><span class="tag tg">Gemini API</span><span class="tag tg">OCR</span><span class="tag tg">Streamlit</span></div>
+        </div>
+      </div>
+      <!-- ════ END ENTRY ════ -->
+
+      <!-- ════ JOURNAL ENTRY ════ -->
+      <div class="jc fi d2">
+        <div class="jbar"></div>
+        <div class="jbody">
+          <div class="jdate">Jul 2025</div>
+          <h4 class="jtit">Deployed Two Live Automation Systems</h4>
+          <p class="jtxt">Built and deployed bilingual WhatsApp service reminders and an SMS Gateway automation — both now running in live production at JAPL, eliminating hours of manual customer follow-up weekly. First time seeing my own automations run in the real world.</p>
+          <div class="jtags"><span class="tag tg">WhatsApp</span><span class="tag tg">SMS Gateway</span><span class="tag tg">PyAutoGUI</span><span class="tag tg">Pandas</span></div>
+        </div>
+      </div>
+      <!-- ════ END ENTRY ════ -->
+
+      <!-- ════ JOURNAL ENTRY ════ -->
+      <div class="jc fi d3">
+        <div class="jbar"></div>
+        <div class="jbody">
+          <div class="jdate">Aug 2026 &nbsp;·&nbsp; Current</div>
+          <h4 class="jtit">Exploring n8n, AI Agents &amp; No-Code Automation</h4>
+          <p class="jtxt">Currently going deep on n8n workflow automation, AI agents, and Flowise for RAG-based systems. Learning how to serve clients who need automation without Python code — the next stage in my solo consulting journey.</p>
+          <div class="jtags"><span class="tag tg">n8n</span><span class="tag tg">AI Agents</span><span class="tag tg">Flowise</span><span class="tag tg">RAG</span></div>
+        </div>
+      </div>
+      <!-- ════ END ENTRY ════ -->
+
+      <!-- JOURNAL:END -->
+    </div>
+    <div class="hint fi">
+      <div class="hinth"><i class="fas fa-pen-to-square"></i><strong>How to add your next learning entry</strong></div>
+      <p class="hintp">Open <code>index.html</code> in Notepad, find the comment <code>JOURNAL ENTRY</code>, copy the whole block between the comment markers, paste it after the last entry, and update the date, title, text and tags. Full step-by-step in <strong>MAINTENANCE_GUIDE.md</strong> in this folder.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials" id="testimonials">
+  <div class="container">
+    <div class="tesh fi">
+      <span class="lbl">Social Proof</span>
+      <h2 class="sec-t">What People Say</h2>
+      <p class="sec-s">Early feedback from colleagues and collaborators — this section grows as I deliver value to more clients worldwide.</p>
+    </div>
+    <div class="tesg">
+      <div class="tesc fi d1"><div class="tesq">"</div><p class="testx">Noor's ability to understand a real business problem and translate it into a working automated solution is remarkable — especially given he built it independently, without any IT support or development team.</p><div class="tesau"><div class="tesav">JA</div><div><div class="tesn">Operations Director</div><div class="tesr">Janatha Automobiles Pvt Ltd, India</div></div></div></div>
+      <div class="tesc fi d2"><div class="tesq">"</div><p class="testx">The WhatsApp reminder system has genuinely reduced our manual customer follow-up workload. It runs reliably every day — something that usually takes a full development team to build and maintain.</p><div class="tesau"><div class="tesav">SM</div><div><div class="tesn">Service Manager</div><div class="tesr">JAPL Dealership, Karnataka</div></div></div></div>
+      <div class="tesc fi d3"><div class="tesq">"</div><p class="testx">What sets Noor apart is that he thinks like a business person first. He doesn't just automate — he understands why the automation matters and what outcome it needs to deliver for the business.</p><div class="tesau"><div class="tesav">HR</div><div><div class="tesn">Senior HR Colleague</div><div class="tesr">Automobile Industry, India</div></div></div></div>
+    </div>
+    <div class="tescta fi">
+      <h3>Worked with me? I'd love to feature your feedback.</h3>
+      <p>If you're a client, collaborator, or colleague who'd like to leave a testimonial, please get in touch — your words help build trust with new clients worldwide.</p>
+      <a href="#contact" class="btn bg"><i class="fas fa-star"></i> Share Your Experience</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="fi">
+      <span class="lbl">Get In Touch</span>
+      <h2 class="sec-t">Let's Work Together</h2>
+      <p class="sec-s">Whether you're an SMB looking to automate a process, or you're curious what AI could do for your business — let's have a real conversation. No jargon, no tech overwhelm, just outcomes.</p>
+    </div>
+    <div class="cong">
+      <div class="fi">
+        <p style="color:rgba(255,255,255,.58);font-size:.9rem;line-height:1.85;margin-bottom:4px;">I'm currently open to freelance AI automation projects, consulting engagements, and long-term partnerships with SMBs worldwide.</p>
+        <div class="cii">
+          <div class="ci"><div class="cico"><i class="fas fa-envelope"></i></div><div><div class="clbl">Email</div><div class="cval"><a href="mailto:tanmd100@gmail.com">tanmd100@gmail.com</a></div></div></div>
+          <div class="ci"><div class="cico"><i class="fab fa-whatsapp"></i></div><div><div class="clbl">WhatsApp</div><div class="cval"><a href="https://wa.me/918660563697">+91 8660563697</a></div></div></div>
+          <div class="ci"><div class="cico"><i class="fab fa-linkedin-in"></i></div><div><div class="clbl">LinkedIn</div><div class="cval"><a href="https://linkedin.com/in/noor-mohammed-t-a-398321264" target="_blank">linkedin.com/in/noor-mohammed-t-a</a></div></div></div>
+          <div class="ci"><div class="cico"><i class="fas fa-map-marker-alt"></i></div><div><div class="clbl">Location</div><div class="cval">Hospet, Karnataka, India (IST) · Serving clients globally</div></div></div>
+        </div>
+        <div class="avail"><div class="adot"></div><div class="atxt2"><strong>Available for new projects</strong> — Typically responds within 24 hours</div></div>
+      </div>
+      <div class="cf fi d2">
+        <!-- ✏️ REPLACE THE URL BELOW with YOUR Formspree endpoint after signing up at formspree.io -->
+        <form id="cForm" onsubmit="doSub(event)" data-formspree-endpoint="https://formspree.io/f/mwlezvdg">
+          <div class="fr"><div class="fg"><label class="fl">Your Name *</label><input type="text" class="ff" placeholder="John Smith" required></div><div class="fg"><label class="fl">Company / Business</label><input type="text" class="ff" placeholder="Your SMB name"></div></div>
+          <div class="fr"><div class="fg"><label class="fl">Email Address *</label><input type="email" class="ff" placeholder="john@company.com" required></div><div class="fg"><label class="fl">Country</label><input type="text" class="ff" placeholder="Your country"></div></div>
+          <div class="fg"><label class="fl">What can I help you automate? *</label><textarea class="ff" placeholder="Tell me about your business challenge or the process you'd like to automate..." required></textarea></div>
+          <button type="submit" class="btn bg fsub"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+        <div id="fok"><i class="fas fa-check-circle"></i><p>Thank you! Your message has been sent.<br>I'll respond to your email within 24–48 hours.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="ftop">
+      <div class="flogo">Noor<span>.</span> Mohammed</div>
+      <div class="flinks"><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#learning">Journal</a><a href="#contact">Contact</a></div>
+      <div class="fsoc">
+        <a href="https://linkedin.com/in/noor-mohammed-t-a-398321264" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/918660563697" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:tanmd100@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="fbot">
+      <p class="fcopy">© 2026 <span>T. A. Noor Mohammed</span>. All rights reserved.</p>
+      <p class="fq">"Business Wisdom, AI Powered."</p>
+    </div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+  const nb=document.getElementById('nb'),btt=document.getElementById('btt');
+  window.addEventListener('scroll',()=>{const y=window.scrollY;nb.classList.toggle('sc',y>60);btt.classList.toggle('show',y>400);});
+  document.getElementById('ntog').addEventListener('click',()=>document.getElementById('mnav').classList.add('open'));
+  document.getElementById('mcls').addEventListener('click',cn);
+  function cn(){document.getElementById('mnav').classList.remove('open');}
+  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+  const secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)c=s.id;});nls.forEach(a=>{a.classList.toggle('act',a.getAttribute('href')==='#'+c);});});
+  function doSub(e){
+    e.preventDefault();
+    const form = document.getElementById('cForm');
+    const endpoint = form.getAttribute('data-formspree-endpoint');
+
+    // ── Collect all field values ──
+    const ins = form.querySelectorAll('input, textarea');
+    const data = {
+      name:    ins[0].value,
+      company: ins[1].value,
+      email:   ins[2].value,
+      country: ins[3].value,
+      message: ins[4].value
+    };
+
+    // ── Show sending state ──
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+    // ── Send to Formspree → arrives in your Gmail ──
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(res => {
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('fok').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        alert('Something went wrong. Please email me directly at tanmd100@gmail.com');
+      }
+    })
+    .catch(() => {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      alert('Network error. Please email me directly at tanmd100@gmail.com');
+    });
+  }
+
+</script>
+</body>
+</html>
