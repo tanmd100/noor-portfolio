@@ -206,10 +206,15 @@
         .tltx{font-size:.86rem;color:var(--g600);line-height:1.8}
 
         /* LEARNING JOURNAL */
-        .learning{background:#fff}
-        .lh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:52px;flex-wrap:wrap;gap:20px}
-        .jg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-        .jc{border-radius:var(--rl);border:1px solid var(--g200);overflow:hidden;transition:var(--tr);background:#fff}
+        .learning{background:#fff;position:relative}
+        .lh{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:20px}
+        .jnav{display:flex;gap:12px;align-items:center}
+        .jbtn{width:44px;height:44px;border-radius:50%;border:1px solid var(--g200);background:#fff;color:var(--navy);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--tr);box-shadow:var(--shsm);font-size:.9rem}
+        .jbtn:hover{background:var(--navy);color:#fff;border-color:var(--navy);transform:translateY(-2px)}
+        .jbtn:active{transform:translateY(0)}
+        .jg{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:12px 0 28px;margin:-12px 0;scrollbar-width:none}
+        .jg::-webkit-scrollbar{display:none}
+        .jc{flex:0 0 calc(33.333% - 15px);scroll-snap-align:start;border-radius:var(--rl);border:1px solid var(--g200);overflow:hidden;transition:var(--tr);background:#fff;box-sizing:border-box}
         .jc:hover{transform:translateY(-7px);box-shadow:var(--shlg)}
         .jbar{height:4px;background:linear-gradient(90deg,var(--navy),var(--gold))}
         .jbody{padding:26px}
@@ -217,6 +222,9 @@
         .jtit{font-size:.98rem;color:var(--navy);margin-bottom:10px;line-height:1.45}
         .jtxt{font-size:.83rem;color:var(--g600);line-height:1.72;margin-bottom:14px}
         .jtags{display:flex;flex-wrap:wrap;gap:6px}
+        @media(max-width:1024px){.jc{flex:0 0 calc(50% - 11px)}}
+        @media(max-width:768px){.jc{flex:0 0 calc(85% - 11px)}}
+
         .hint{display:none;margin-top:32px;background:linear-gradient(135deg,#f7f8fc,#eef0f8);border-radius:var(--r);padding:24px 28px;border:1.5px dashed var(--g200)}
         .hinth{display:flex;align-items:center;gap:10px;margin-bottom:6px}
         .hinth i{color:var(--gold)}
@@ -539,20 +547,13 @@
         <h2 class="sec-t">My AI Learning Journey</h2>
         <p class="sec-s">Documenting my ongoing exploration of AI tools, platforms, and techniques — updated regularly as I learn and build.</p>
       </div>
+      <div class="jnav fi">
+        <button class="jbtn" onclick="scJ(-1)" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+        <button class="jbtn" onclick="scJ(1)" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+      </div>
     </div>
     <div class="jg" id="jGrid">
       <!-- JOURNAL:START -->
-
-<div class="jc fi d1">
-  <div class="jbar"></div>
-  <div class="jbody">
-    <div class="jdate">Aug 2026</div>
-    <h4 class="jtit">Successfully Built My First n8n Agent</h4>
-    <p class="jtxt">I built and configured a multi-step n8n automation flow on my laptop. It automatically takes this form data, uses Gemini to format it into code, and pushes it to my GitHub repository.</p>
-    <div class="jtags"><span class="tag tg">n8n</span><span class="tag tg">automation</span><span class="tag tg">AI agent</span></div>
-  </div>
-</div>
-<!-- ════ END ENTRY ════ -->
 
       <!-- ════ JOURNAL ENTRY — copy this entire block to add a new entry ════ -->
       <div class="jc fi d1">
@@ -727,6 +728,14 @@
     });
   }
 
+  function scJ(d) {
+    const g = document.getElementById('jGrid');
+    const c = g.querySelector('.jc');
+    if (c) {
+      const w = c.offsetWidth + 22; // Width of card + gap
+      g.scrollBy({ left: d * w, behavior: 'smooth' });
+    }
+  }
 </script>
 </body>
 </html>
